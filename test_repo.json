@@ -1,0 +1,88 @@
+{
+    "smartling":{
+        "translate_paths": {
+            "path": "Strings/*",
+            "key": "Strings/{*}"
+        },
+        "placeholder_format_custom": ["(%\\{.*?\\})|(\\{.*?\\})"],
+          "variants_enabled" : "true"
+    },
+    "Links": [
+    {
+      "Key": "ContactUs",
+      "Value": "https://my.dazn.com/contactus/DE-en"
+    },
+    {
+      "Key": "Help",
+      "Value": "https://my.dazn.com/help/DE-en"
+    },
+    {
+      "Key": "Faq",
+      "Value": "https://my.dazn.com/help/DE-en/FAQ"
+    },
+    {
+      "Key": "MyAccount",
+      "Value": "https://my.dazn.com/myaccount"
+    },
+    {
+      "Key": "EditPayment",
+      "Value": "https://my.dazn.com/ChangePaymentMethod"
+    },
+    {
+      "Key": "Terms",
+      "Value": "https://my.dazn.com/help/DE-en/terms"
+    },
+    {
+      "Key": "Privacy",
+      "Value": "https://my.dazn.com/help/DE-en/privacy"
+    },
+    {
+      "Key": "GoogleStore",
+      "Value": "https://play.google.com/store/apps/details?id=com.dazn&hl=de"
+    },
+    {
+      "Key": "AmazonStore",
+      "Value": "https://www.amazon.de/DAZN/dp/B01IPC7MBE"
+    },
+    {
+      "Key": "AppleStore",
+      "Value": "https://itunes.apple.com/de/app/dazn/id1129523589"
+    },
+    {
+      "Key": "Impressum",
+      "Value": "https://my.dazn.com/help/DE-en/impressum"
+    },
+    {
+      "Key": "GiftCodePurchase",
+      "Value": "https://my.dazn.com/help/DE-en/where-to-buy-a-gift-code"
+    },
+    {
+      "Key": "thirdPartyPaymentArticleLink",
+      "Value": "https://my.dazn.com/help/DE-en/why-are-gift-codes-not-applicable-to-my-account"
+    },
+    {
+      "Key": "Media",
+      "Value": "http://media.dazn.com/de/"
+    }
+  ],
+  "Strings": {
+    "exitapp_question": "Are you sure you want to exit?",
+    "exitapp_secondaryButton": "CANCEL",
+    "exitapp_statement": "Exiting won't sign you out so it's easier to get watching next time",
+    "favourites_FavouriteLeague_Body": "This selection may result in more notifications than you really need. But remember: you can always manage your reminders and keep the amount of alerts just right.",
+    "favourites_FavouriteLeague_Toggle_Off": "Show me this again",
+    "favourites_FavouriteLeague_Toggle_On": "Don't show me this again",
+    "favourites_Limit_body": "You have reached the limit of 10 Competitors or Competitions. You can always manage your Reminders list to make more space.",
+    "favourites_Limit_button": "Manage Your Reminders",
+    "favourites_Limit_header": "You have reached your Favourites limit",
+    "favourites_Onboarding_Button": "ENABLE NOTIFICATIONS",
+    "favourites_Onboarding_Header": "NEVER MISS THE ACTION AGAIN!"
+
+  },
+  "Metadata": {
+    "ArticlesLastUpdated": "2018-09-23T19:00:54.000Z",
+    "LabelsLastUpdated": "2018-09-24T15:00:44.000Z",
+    "LinksLastUpdated": "2018-05-22T12:59:34.000Z",
+    "BuiltWhen": "This response was built on 2018-09-24T15:12:26.898Z"
+  }
+}
