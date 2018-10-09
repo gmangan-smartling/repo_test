@@ -1,0 +1,18 @@
+{
+    "locales": [
+        {
+            "smartling" : "fr-FR",
+            "application" : "fr-FR"
+        },
+        {
+            "smartling" : "de-DE",
+            "application" : "de-DE"
+        }
+    ],
+    "resourceSets": [
+        {
+            "type": "json",
+            "pathRegex" : "\\**\\/\\*\\.json"
+        }
+    ]
+}
