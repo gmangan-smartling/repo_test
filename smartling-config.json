@@ -12,7 +12,7 @@
     "resourceSets": [
         {
             "type": "json",
-            "pathRegex" : "\\**\\/\\*\\.json"
+            "pathRegex" : "\\*\\*\\/\\*\\.json"
         }
     ]
 }
