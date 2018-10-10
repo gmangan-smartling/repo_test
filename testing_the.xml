@@ -1,0 +1,20 @@
+<organiser>
+	<note>
+		<to>Cat</to>
+		<from>Dog</from>
+		<heading>Reminder</heading>
+		<body>Please stop eating my food.</body>
+	</note>
+	<note>
+		<to>Dog</to>
+		<from>Cat</from>
+		<heading>Response</heading>
+		<body>You mean my food and no.</body>
+	</note>
+	<note>
+		<to>Cat</to>
+		<from>Dog</from>
+		<heading>Question</heading>
+		<body>Why are you so evil.</body>
+	</note>
+</organiser>
