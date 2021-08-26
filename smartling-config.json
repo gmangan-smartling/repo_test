@@ -11,12 +11,6 @@
     ],
     "resourceSets": [
         {
-            "type": "json",
-            "pathRegex" : ".+\\en.json",
-            "translationPathExpression" : "translated/${originalFile.baseName}_${locale}.${originalFile.extension}",
-            "translationCommitMessage"  : "Translate ${originalFile.fullName} to ${locale}"
-        },
-        {
             "type": "xml",
             "pathRegex": "source\\/.*_en\\.xml",
             "translationPathExpression" : "translated/${originalFile.baseName}_${locale}.${originalFile.extension}",
