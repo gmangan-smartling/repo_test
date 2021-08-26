@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- smartling.translate_paths = translations/unit/translation -->
+<!-- smartling.source_key_paths = translations/unit/{translation.key} -->
+<!-- smartling.instruction_paths = translations/unit/instruction -->
+<!-- smartling.character_limit_paths = translations/unit/maxchar -->
+<!-- smartling.variants_enabled = TRUE -->
+<!-- smartling.placeholder_format_custom = \{.+?\} -->
+<!-- smartling.entity_escaping = false -->
+<translations xmlns="http://www.hm.com/2021/OnlineTranslations">
+  <unit>
+    <translation key="1.checkout.payment.information.details" system="hybris" subsystem="frontend">After clicking “Pay Now” you will be transferred to your chosen banks website to complete your purchase.&lt;br&gt; Chosen payment: Bank transfer</translation>
+  </unit>
+  <unit>
+    <translation key="110.checkout.payment.information.details" system="hybris" subsystem="frontend">Après avoir cliqué sur &quot;Payer maintenant&quot;, vous serez transféré sur le site de la banque de votre choix pour compléter votre achat. &lt;br&gt;  Paiement choisi : Virement bancaire</translation>
+  </unit>
+  <unit>
+    <translation key="121.checkout.payment.information.details" system="hybris" subsystem="frontend">Après avoir cliqué sur &quot;Payer maintenant&quot;, vous serez transféré sur le site de la banque de votre choix pour compléter votre achat. &lt;br&gt;  Paiement choisi : Virement bancaire</translation>
+  </unit>
+  <unit>
+    <translation key="126.checkout.payment.information.details" system="hybris" subsystem="frontend">Après avoir cliqué sur &quot;Payer maintenant&quot;, vous serez transféré sur le site de la banque de votre choix pour compléter votre achat. &lt;br&gt;  Paiement choisi : Virement bancaire</translation>
+  </unit>
+</translations>
