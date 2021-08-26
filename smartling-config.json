@@ -18,13 +18,9 @@
         },
         {
             "type": "xml",
-            "pathRegex" : ".+\\.xml",
+            "pathRegex": "source\\/.*_en\\.xml",
             "translationPathExpression" : "translated/${originalFile.baseName}_${locale}.${originalFile.extension}",
-            "translationCommitMessage"  : "Translate ${originalFile.fullName} to ${locale}",
-            "smartlingDirectives" : [
-                "smartling.translate_paths = organiser/note/heading, organiser/note/body",
-                "smartling.variants_enabled = TRUE"
-            ]
+            "translationCommitMessage"  : "Translate ${originalFile.fullName} to ${locale}"
         }
     ]
 }
