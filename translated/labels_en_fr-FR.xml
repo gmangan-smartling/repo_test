@@ -8,7 +8,7 @@
 <!-- smartling.entity_escaping = false -->
 <translations xmlns="http://www.hm.com/2021/OnlineTranslations">
   <unit>
-    <translation key="1.checkout.payment.information.details" system="hybris" subsystem="frontend">After clicking “Pay Now” you will be transferred to your chosen banks website to complete your purchase.&lt;br&gt; Chosen payment: Bank transfer</translation>
+    <translation key="1.checkout.payment.information.details" system="hybris" subsystem="frontend">Après avoir cliqué sur &quot;Payer maintenant&quot;, vous serez transféré sur le site de la banque de votre choix pour compléter votre achat. &lt;br&gt;  Paiement choisi : Virement bancaire</translation>
   </unit>
   <unit>
     <translation key="110.checkout.payment.information.details" system="hybris" subsystem="frontend">Après avoir cliqué sur &quot;Payer maintenant&quot;, vous serez transféré sur le site de la banque de votre choix pour compléter votre achat. &lt;br&gt;  Paiement choisi : Virement bancaire</translation>
@@ -18,5 +18,8 @@
   </unit>
   <unit>
     <translation key="126.checkout.payment.information.details" system="hybris" subsystem="frontend">Après avoir cliqué sur &quot;Payer maintenant&quot;, vous serez transféré sur le site de la banque de votre choix pour compléter votre achat. &lt;br&gt;  Paiement choisi : Virement bancaire</translation>
+  </unit>
+  <unit>
+    <translation key="127.payment.information.card" system="hybris" subsystem="frontend">Veuillez payer maintenant.</translation>
   </unit>
 </translations>
