@@ -20,6 +20,6 @@
     <translation key="126.checkout.payment.information.details" system="hybris" subsystem="frontend">After clicking “Pay Now” you will be transferred to your chosen banks website to complete your purchase.&lt;br> Chosen payment: Bank transfer</translation>
   </unit>
    <unit>
-    <translation key="1.checkout.payment" system="hybris" subsystem="frontend">Look at this..</translation>
+    <translation key="1.checkout.payment" system="hybris" subsystem="frontend">Look At This..</translation>
   </unit>
 </translations>
