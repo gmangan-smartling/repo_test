@@ -22,4 +22,7 @@
    <unit>
     <translation key="1.checkout.payment" system="hybris" subsystem="frontend">Look At This..</translation>
   </unit>
+  <unit>
+    <translation key="1.modified.checkout" system="hybris" subsystem="frontend">A fresh string for testing.</translation>
+  </unit>
 </translations>
