@@ -22,4 +22,7 @@
   <unit>
     <translation key="127.payment.information.card" system="hybris" subsystem="frontend">Please pay now.</translation>
   </unit>
+   <unit>
+    <translation key="12.checkout.this" system="hybris" subsystem="frontend">Testing functionality.</translation>
+  </unit>
 </translations>
