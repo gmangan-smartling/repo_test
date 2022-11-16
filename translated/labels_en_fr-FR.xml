@@ -20,6 +20,6 @@
     <translation key="126.checkout.payment.information.details" system="hybris" subsystem="frontend">Après avoir cliqué sur &quot;Payer maintenant&quot;, vous serez transféré sur le site de la banque de votre choix pour compléter votre achat. &lt;br&gt;  Paiement choisi : Virement bancaire</translation>
   </unit>
    <unit>
-    <translation key="1.checkout.payment" system="hybris" subsystem="frontend">Regarde ça...</translation>
+    <translation key="1.checkout.payment" system="hybris" subsystem="frontend"></translation>
   </unit>
 </translations>
