@@ -1,8 +1,9 @@
 {
+    "locales":[
     { "smartling": "nl-NL", "application": "nl-NL" },
     { "smartling": "fr-FR", "application": "fr" },
     { "smartling": "it-IT", "application": "it" }
-     ],
+    ],
 
      // Resource sets that are uploaded to Smartling. You can have one or more resource sets defined by file type.
      // Each set has following attributes
