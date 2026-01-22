@@ -38,7 +38,7 @@
          //                                                           /web/messages/zh-Hant/admin/main_screen/title.propertie
          {
              "type"                      : "json",
-             "authorizeContent"          : "false",
+             "authorizeContent"          : "true",
              "pathRegex"                 : "i18n\\/en\\.json",
              "translationPathExpression" : "i18n/${locale}.${originalFile.extension}",
              "translationCommitMessage"  : "Smartling task translate ${originalFile.name} to ${locale}\n${translatedFile.fullName}",
