@@ -50,8 +50,8 @@ jobs:
             --form 'fileUri=${{ github.event.inputs.file_uri }}' \
             --form 'fileUri="${{ github.event.inputs.file_uri }}"' \
             --form 'fileType="json"' \
-            --form 'smartling.placeholder_format_custom="(\\{\\{.+?\\}\\}|\\d+)"' \
-            --form 'smartling.translate_paths="[{\"key\": \"{*}\", \"path\": \"*\"}]"' \
+            --form 'smartling.placeholder_format_custom="(\d+)"' \
+            --form 'smartling.translate_paths="[{"key": "{*}", "path": "*"}]"' \
             --form 'smartling.variants_enabled="true"' \
             --form 'smartling.entity_escaping="false"' \
             "https://api.smartling.com/files-api/v2/projects/$SMARTLING_PROJECT_ID/file")
