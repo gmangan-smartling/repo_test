@@ -1,0 +1,67 @@
+name: Upload JSON to Smartling
+
+on:
+  workflow_dispatch:
+    inputs:
+      file_path:
+        description: 'Path to the JSON file to upload (e.g. src/locales/en.json)'
+        required: true
+        default: 'en.json'
+      file_uri:
+        description: 'File URI in Smartling (the identifier for the file in your project)'
+        required: true
+        default: 'en.json'
+
+jobs:
+  upload:
+    name: Upload JSON to Smartling
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Upload file to Smartling
+        env:
+          SMARTLING_PROJECT_ID: ${{ secrets.SMARTLING_PROJECT_ID }}
+          SMARTLING_USER_ID: ${{ secrets.SMARTLING_USER_ID }}
+          SMARTLING_USER_SECRET: ${{ secrets.SMARTLING_USER_SECRET }}
+        run: |
+          # Authenticate and retrieve access token
+          TOKEN_RESPONSE=$(curl --silent --request POST \
+            --header "Content-Type: application/json" \
+            --data "{\"userIdentifier\": \"$SMARTLING_USER_ID\", \"userSecret\": \"$SMARTLING_USER_SECRET\"}" \
+            "https://api.smartling.com/auth-api/v2/authenticate")
+
+          ACCESS_TOKEN=$(echo "$TOKEN_RESPONSE" | jq -r '.response.data.accessToken')
+
+          if [ -z "$ACCESS_TOKEN" ] || [ "$ACCESS_TOKEN" = "null" ]; then
+            echo "ERROR: Failed to retrieve access token."
+            echo "$TOKEN_RESPONSE" | jq .
+            exit 1
+          fi
+
+          echo "Successfully authenticated with Smartling."
+
+          # Upload the JSON file
+          UPLOAD_RESPONSE=$(curl --silent --request POST \
+            --header "Authorization: Bearer $ACCESS_TOKEN" \
+            -F "file=@${{ github.workspace }}/${{ github.event.inputs.file_path }};type=application/json" \
+            -F "fileUri=${{ github.event.inputs.file_uri }}" \
+            -F "fileType=json" \
+            -F 'smartling.placeholder_format_custom=(\\{\\{.+?\\}\\}|\\d+)' \
+            -F 'smartling.translate_paths=[{"key": "{*}", "path": "*"}]' \
+            -F "smartling.variants_enabled=true" \
+            -F "smartling.entity_escaping=false")
+            "https://api.smartling.com/files-api/v2/projects/$SMARTLING_PROJECT_ID/file")
+
+          echo "$UPLOAD_RESPONSE" | jq .
+
+          # Check for success
+          CODE=$(echo "$UPLOAD_RESPONSE" | jq -r '.response.code')
+          if [ "$CODE" != "SUCCESS" ]; then
+            echo "ERROR: File upload failed."
+            exit 1
+          fi
+
+          echo "File '${{ github.event.inputs.file_path }}' successfully uploaded to Smartling as '${{ github.event.inputs.file_uri }}'."
