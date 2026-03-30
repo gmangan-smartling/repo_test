@@ -52,7 +52,7 @@ jobs:
             -F 'smartling.placeholder_format_custom=(\\{\\{.+?\\}\\}|\\d+)' \
             -F 'smartling.translate_paths=[{"key": "{*}", "path": "*"}]' \
             -F "smartling.variants_enabled=true" \
-            -F "smartling.entity_escaping=false") \
+            -F "smartling.entity_escaping=false" \
             "https://api.smartling.com/files-api/v2/projects/$SMARTLING_PROJECT_ID/file")
 
           echo "$UPLOAD_RESPONSE" | jq .
