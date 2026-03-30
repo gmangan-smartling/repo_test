@@ -48,11 +48,12 @@ jobs:
             --header "Authorization: Bearer $ACCESS_TOKEN" \
             -F "file=@${{ github.workspace }}/${{ github.event.inputs.file_path }};type=application/json" \
             -F "fileUri=${{ github.event.inputs.file_uri }}" \
-            -F "fileType=json" \
-            -F "smartling.placeholder_format_custom=(\\{\\{.+?\\}\\}|\\d+)" \
-            -F "smartling.translate_paths=[{\"key\": \"{*}\", \"path\": \"*\"}]" \
-            -F "smartling.variants_enabled=true" \
-            -F "smartling.entity_escaping=false" \
+            --form 'fileUri="${{ github.event.inputs.file_uri }}"' \
+            --form 'fileType="json"' \
+            --form 'smartling.placeholder_format_custom="(\\{\\{.+?\\}\\}|\\d+)"' \
+            --form 'smartling.translate_paths="[{\"key\": \"{*}\", \"path\": \"*\"}]"' \
+            --form 'smartling.variants_enabled="true"' \
+            --form 'smartling.entity_escaping="false"'
             "https://api.smartling.com/files-api/v2/projects/$SMARTLING_PROJECT_ID/file")
 
           echo "$UPLOAD_RESPONSE" | jq .
