@@ -1,4 +1,4 @@
-name: Upload BA JSON to Smartling
+name: Upload JSON to Smartling
 
 on:
   workflow_dispatch:
@@ -45,15 +45,15 @@ jobs:
 
           # Upload the JSON file
           UPLOAD_RESPONSE=$(curl -s -o /tmp/upload_response.json -w "%{http_code}" -X POST \
-          "https://api.smartling.com/files-api/v2/projects/$SMARTLING_PROJECT_ID/file" \
             --header "Authorization: Bearer $ACCESS_TOKEN" \
             -F 'file=@${{ github.workspace }}/${{ github.event.inputs.file_path }};type=application/json' \
             -F 'fileUri="${{ github.event.inputs.file_uri }}"' \
             -F 'fileType="json"' \
-            -F 'smartling.placeholder_format_custom=(\{\{.+?\}\}|\d+)' \
+            -F 'smartling.placeholder_format_custom="(\{\{.+?\}\}|\d+)"' \
             -F 'smartling.translate_paths="[{\"key\": \"{*}\", \"path\": \"*\"}]"' \
             -F 'smartling.variants_enabled="true"' \
-            -F 'smartling.entity_escaping="false"')
+            -F 'smartling.entity_escaping="false"' \
+            "https://api.smartling.com/files-api/v2/projects/$SMARTLING_PROJECT_ID/file")
 
           echo "$UPLOAD_RESPONSE" | jq .
 
