@@ -1,0 +1,43 @@
+- name:: Upload JSON to Smartling
+  run: |
+    MAX_RETRIES=6
+
+    while [ $RETRIES -lt $MAX_RETRIES ]; do
+      HTTP_CODE=$(curl -s -o /tmp/upload_response.json -w "%{http_code}" -X POST \
+        "https://api.smartling.com/files-api/v2/projects/$SMARTLING_PROJECT_ID/file" \
+        -H "Authorization: ***" \
+        -F "file=@$FILE_PATH;type=application/json" \
+       -F "fileUri=$FILE_URI" \
+       -F "fileType=json" \
+       -F 'smartling.placeholder_format_custom=(\{\\{.+?\\}\}|\d+)' \
+       -F 'smartling.translate_paths="[{\"key\": \"{*}\", \"path\": \"*\"}]"' \
+       -F 'smartling.variants_enabled="true"' \
+       -F 'smartling.entity_escaping="false"')
+
+     if [ "$HTTP_CODE" -ge 200 ] && [ "$HTTP_CODE" -lt 300 ]; then
+       echo "File uploaded successfully."
+       cat /tmp/upload_response.json
+       break
+     elif [ "$HTTP_CODE" -eq 423 ]; then
+       RETRIES=$((RETRIES + 1))
+       echo "Received 423. Retrying ($RETRIES/$MAX_RETRIES)..."
+       sleep 5
+     else
+       echo "::error::Upload failed: $HTTP_CODE"
+       cat /tmp/upload_response.json
+       exit 1
+     fi
+   done
+
+   if [ $RETRIES -eq $MAX_RETRIES ]; then
+     echo "::error::Max retries reached."
+     exit 1
+   fi
+   shell: /usr/bin/bash -e {0}
+   env:
+     SMARTLING_PROJECT_ID: b8448783f
+     SMARTLING_USER_TOKEN: 74sjjhmjeufodh2642g2efboe8BY-1crjilnv5pa036dfbo53ecr43k
+     SMARTLING_USER_ID: bydpznwvetqlxjbflncpplfumbtjfz
+     FILE_PATH: en.json
+     FILE_URI: olci-src/assets/i18n/en/translation.json
+     ARTIFACT: olci
