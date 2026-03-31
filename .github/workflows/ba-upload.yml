@@ -50,7 +50,7 @@ jobs:
             -F 'file=@${{ github.workspace }}/${{ github.event.inputs.file_path }};type=application/json' \
             -F 'fileUri="${{ github.event.inputs.file_uri }}"' \
             -F 'fileType="json"' \
-            -F 'smartling.placeholder_format_custom=(\{\\{.+?\\}\}|\d+)' \
+            -F 'smartling.placeholder_format_custom=(\{\{.+?\}\}|\d+)' \
             -F 'smartling.translate_paths="[{\"key\": \"{*}\", \"path\": \"*\"}]"' \
             -F 'smartling.variants_enabled="true"' \
             -F 'smartling.entity_escaping="false"')
