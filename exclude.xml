@@ -1,0 +1,20 @@
+<organiser>
+	<note>
+		<to>Cat</to>
+		<from>Dog</from>
+		<heading>Friday</heading>
+		<body>Walk later</body>
+	</note>
+	<note>
+		<to>Dog</to>
+		<from>Cat</from>
+		<heading>RE: Friday</heading>
+		<body>Walk yourself.</body>
+	</note>
+	<note>
+		<to>Cat</to>
+		<from>Dog</from>
+		<heading>RE: RE: Friday</heading>
+		<body>Ok.</body>
+	</note>
+</organiser>
